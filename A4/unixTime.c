@@ -9,7 +9,7 @@ int main (int argc, char *argv[]) {
    double newstart, newend;
    double mytime;
    struct timeval start, end;
-   char buffer[20000];
+   char buffer[100000];
    FILE *fp;
    float sum = 0;
 
@@ -22,7 +22,7 @@ int main (int argc, char *argv[]) {
       fp = fopen(fileName, "r");
       gettimeofday(&start, NULL);
       
-      fread(buffer, 20000, 1, fp);
+      fread(buffer, 100000, 1, fp);
       
       gettimeofday(&end, NULL);
       newstart = start.tv_sec + (double)start.tv_usec / 1000000.0;
