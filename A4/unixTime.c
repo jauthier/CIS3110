@@ -19,11 +19,12 @@ int main (int argc, char *argv[]) {
    }
    for ( i=0; i<10; i++ ) {
       char *fileName = argv[1];
-      fp = fopen(fileName, "r");
       gettimeofday(&start, NULL);
-      
+
+      fp = fopen(fileName, "r");
       fread(buffer, 100000, 1, fp);
-      
+      fclose(fp);
+
       gettimeofday(&end, NULL);
       newstart = start.tv_sec + (double)start.tv_usec / 1000000.0;
       newend = end.tv_sec + (double)end.tv_usec / 1000000.0;
