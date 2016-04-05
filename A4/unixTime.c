@@ -1,7 +1,7 @@
 #include "stdio.h"
 #include "stdlib.h"
 #include <sys/time.h>
-int main () {
+int main (int argc, char *argv[]) {
 
    int i;
    int t1;
