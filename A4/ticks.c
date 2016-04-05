@@ -9,7 +9,7 @@ int main (int argc, char *argv[]) {
    ticks t2;
    double mytime1;
    double mytime2;
-   char buffer[5000];
+   char buffer[20000];
    FILE *fp;
 
    if (argc == 1){
@@ -18,14 +18,13 @@ int main (int argc, char *argv[]) {
    }
    char *fileName = argv[1];
    fp = fopen(fileName, "r");
-   t1 = getticks();
+      t1 = getticks();
 
-   fread(buffer, 5000, 1, fp);
+      fread(buffer, 20000, 1, fp);
 
-   t2 = getticks();
-   mytime1 = elapsed(t2,t1);
-   mytime2 = elapsed(t2,t1) / LONG;
-   printf ("%f	%f\n",mytime1,mytime2);
-
+      t2 = getticks();
+      mytime1 = elapsed(t2,t1);
+      mytime2 = elapsed(t2,t1) / LONG;
+      printf ("%f	%f\n",mytime1,mytime2);
 }
 
