@@ -17,24 +17,24 @@ int main (int argc, char *argv[]) {
       printf("Please enter the name of the file\n");
       exit(0);
    }
-   for ( i=0; i<10; i++ ) {
+//   for ( i=0; i<3; i++ ) {
       char *fileName = argv[1];
+      fp = fopen(fileName, "r");
       gettimeofday(&start, NULL);
 
-      fp = fopen(fileName, "r");
       fread(buffer, 100000, 1, fp);
-      fclose(fp);
 
       gettimeofday(&end, NULL);
+      fclose(fp);
       newstart = start.tv_sec + (double)start.tv_usec / 1000000.0;
       newend = end.tv_sec + (double)end.tv_usec / 1000000.0;
       mytime = newend - newstart;
       sum = sum + mytime;
       printf("%f\n", mytime);
-   }
+  // }
    
-   float av = sum / 10;
-   printf("the average is: %f\n",av);
+   //float av = sum / 3;
+  // printf("the average is: %f\n",av);
 
 }
 
