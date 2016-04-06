@@ -17,7 +17,7 @@ int main (int argc, char *argv[]) {
       printf("Please enter the name of the file\n");
       exit(0);
    }
-   
+   for ( i=0; i<3; i++ ) {
       char *fileName = argv[1];
       gettimeofday(&start, NULL);
 
@@ -31,6 +31,9 @@ int main (int argc, char *argv[]) {
       mytime = newend - newstart;
       sum = sum + mytime;
       printf("%f\n", mytime);
+   }
+   
+   float av = sum / 10;
+   printf("the average is: %f\n",av);
 
 }
-
